@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --mainColor:#b36ae2;
+    --white:#FFFFFF;
+    --gray:#A6A6A6;
+    --black1:#261F34;
+    --black2:#1D1727;
+}
+
+.mainColor{
+    color:var(--mainColor);
+}
+.white{
+    color:var(--white);
+}
+.gray{
+    color:var(--gray);
+}
+.black1{
+    color:var(--black1);
+}
+.black2{
+    color:var(--black2);
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    background: var(--black2);
+}
+
+.noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+h1#title{
+    text-align: center;
+    transform: translate(calc(50vw - 50%),calc(25vh - 50%));
+    display: inline-block;
+    padding: .25em;
+    cursor: pointer;
+}
+
+h1#title::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+h1#title:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  
+h1#title::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: var(--black1);
+    z-index: -1;
+    transition: transform .3s ease;
+    animation-name: h1BeforeAnim;
+    animation-duration: 3s;
+}
+
+@keyframes h1BeforeAnim {
+    0% {opacity: 0}
+    66% {opacity: 0}
+}
+
+#background{
+    position:absolute;
+    top:0;
+    left:0;
+  }
