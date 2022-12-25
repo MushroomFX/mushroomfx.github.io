@@ -1,3 +1,4 @@
+var discord = document.getElementById('discord');
 for(i=0;i<document.querySelectorAll('.animLetters').length;i++){
     var current = document.querySelectorAll('.animLetters')[i]
     var arr = current.innerHTML.split('')
@@ -21,11 +22,17 @@ for(i=0;i<document.querySelectorAll('.animLetter').length;i++){
     turnVisible(elem)
 }
 function turnVisible(elem){
+    discord.style.transition = `bottom 1500ms, opacity 1500ms, filter 1500ms, text-shadow 250ms`;
     setTimeout(function(){
         elem.style.top = '0px'
         elem.style.opacity = '1'
         elem.style.filter = 'blur(0px)'
-    },0)
+    },100)
+    setTimeout(function(){
+        discord.style.bottom = '1em'
+        discord.style.opacity = '1'
+        discord.style.filter = 'blur(0px)'
+    },1500)
 }
 
 function remHoverGlow(elem){

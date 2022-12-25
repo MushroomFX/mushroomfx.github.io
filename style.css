@@ -81,4 +81,18 @@ h1#title::before {
     position:absolute;
     top:0;
     left:0;
-  }
+}
+
+#discord{
+    position:absolute;
+    left:0;
+    bottom: 0;
+    transform: translate(calc(50vw - 50%));
+    opacity: 0;
+    filter:blur(10px)
+}
+#discord > img{
+    bottom: 1em;
+    position: absolute;
+    cursor: pointer;
+}
