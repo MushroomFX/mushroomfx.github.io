@@ -16,4 +16,8 @@ if (isMobile == true) {
   info.style.left = "1em";
 
   var links = document.getElementsByClassName("linkContainer")[0];
+
+  for(i=0;i<document.getElementsByClassName('containerItem').length;i++) {
+    document.getElementsByClassName('containerItem')[i].style.transform = "translate(25%"
+  }
 }
