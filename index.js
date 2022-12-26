@@ -1,4 +1,4 @@
-var discord = document.getElementById('discord');
+
 for(i=0;i<document.querySelectorAll('.animLetters').length;i++){
     var current = document.querySelectorAll('.animLetters')[i]
     var arr = current.innerHTML.split('')
@@ -22,17 +22,28 @@ for(i=0;i<document.querySelectorAll('.animLetter').length;i++){
     turnVisible(elem)
 }
 function turnVisible(elem){
-    discord.style.transition = `bottom 1500ms, opacity 1500ms, filter 1500ms, text-shadow 250ms`;
+    
     setTimeout(function(){
         elem.style.top = '0px'
         elem.style.opacity = '1'
         elem.style.filter = 'blur(0px)'
     },100)
-    setTimeout(function(){
-        discord.style.bottom = '1em'
-        discord.style.opacity = '1'
-        discord.style.filter = 'blur(0px)'
-    },1500)
+
+
+    
+    var containerItems = document.getElementsByClassName('containerItem');
+    for(j=0;j<containerItems.length;j++){
+        containerItems[j].style.transition = `bottom 1500ms, opacity 1500ms, filter 1500ms, text-shadow 250ms`;
+        animItem(containerItems[j],j)
+    }
+
+    function animItem(containerItem,ms){
+        setTimeout(function(){
+            containerItem.style.bottom = '1em'
+            containerItem.style.opacity = '1'
+            containerItem.style.filter = 'blur(0px)'
+        },1500+ms*250)
+    }
 }
 
 function remHoverGlow(elem){

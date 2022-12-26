@@ -29,6 +29,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 2em;
     background: var(--black2);
+    overflow: hidden;
 }
 
 .noSelect {
@@ -40,6 +41,14 @@ body{
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
   }
+
+#background{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+
 
 h1#title{
     text-align: center;
@@ -77,22 +86,75 @@ h1#title::before {
     66% {opacity: 0}
 }
 
-#background{
-    position:absolute;
-    top:0;
-    left:0;
+
+
+
+#info{
+    position: absolute;
+    color:var(--white);
+    width: 50vw;
+    left:25vw;
+    top:50vh;
+    padding: .25em;
+    animation-name: fadeIn;
+    animation-duration: 3s;
 }
 
-#discord{
-    position:absolute;
-    left:0;
-    bottom: 0;
-    transform: translate(calc(50vw - 50%));
-    opacity: 0;
-    filter:blur(10px)
-}
-#discord > img{
-    bottom: 1em;
+#info:before {
+    background: var(--black1);
+    content: " ";
     position: absolute;
+    height: 100%;
+    animation-name: swipeRight;
+    animation-duration: 3s;
+}
+
+@keyframes swipeRight {
+    0% {width: 0%}
+    50% {width: 100%;transform: translate(0%);}
+    100% {width: 0%;transform: translate(50vw);}
+}
+
+@keyframes fadeIn {
+    0% {color: transparent;}
+    50% {color: transparent;}
+}
+
+
+
+
+.linkContainer {
+    bottom:0;
+    left:50vw;
+    transform: translate(-50%);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0em 2em; 
+    grid-template-areas: 
+      ". . .";
+  }
+
+.containerItem{
+    opacity: 0;
+    filter:blur(10px);
+    height: 100%;
+    position: relative;
+    bottom: 0em;
+}
+.containerItem > img{
     cursor: pointer;
+    height: 80%;
+}
+
+.sup{
+    font-size: .5em;
+    color:var(--gray);
+    animation-name: fadeIn;
+    animation-duration: 3s;
 }
