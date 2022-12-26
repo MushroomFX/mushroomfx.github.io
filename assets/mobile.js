@@ -7,15 +7,16 @@ console.log('mobile: '+isMobile)
 if(isMobile == true){
     var title = document.getElementById('title')
     title.style.width = '100vw'
-    title.style.transform = 'translate(0,0)'
+    title.style.transform = 'translate(0,-.5em)'
+    title.style.fontSize = '1.5em'
 
     var info = document.getElementById('info')
-    info.style.top = '30vh';
+    info.style.top = '15vh';
     info.style.width = 'calc(100vw - 2em)';
     info.style.left = '1em';
 
     
 
     var links = document.getElementsByClassName('linkContainer')[0]
-    links.style.transform = 'translate(-50%,-5em)'
+    // links.style.transform = 'translate(-50%,-0em)'
 }
