@@ -18,6 +18,6 @@ if (isMobile == true) {
   var links = document.getElementsByClassName("linkContainer")[0];
 
   for(i=0;i<document.getElementsByClassName('containerItem').length;i++) {
-    document.getElementsByClassName('containerItem')[i].style.transform = "translate(25%"
+    document.getElementsByClassName('containerItem')[i].style.transform = "translate(25%)";
   }
 }
