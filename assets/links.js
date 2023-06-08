@@ -1,5 +1,5 @@
 function openDC() {
-  window.open("http://discord.com/users/1056399841372164107/");
+  window.open("https://discordapp.com/users/355012453609897985/");
 }
 function openGit() {
   window.open("http://github.com/MushroomFX/");
